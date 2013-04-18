@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'Bebas';
+  src: url("./fonts/BebasNeue-webfont.eot");
+  src: url("./fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/BebasNeue-webfont.woff") format("woff"), url("./fonts/BebasNeue-webfont.ttf") format("truetype"), url("./fonts/BebasNeue-webfont.svg#BebasNeueRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  font-family: 'Bebas';
+  background: #f4eeee; }
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal; }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #a1abaf; }
+
+header .topNav {
+  background: #216abb;
+  font-size: 23px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); }
+  header .topNav a {
+    color: #f0c343; }
+header .leftNav ul.social {
+  position: fixed;
+  top: 0; }
+  header .leftNav ul.social li:first-child {
+    padding-top: 71px; }
+  header .leftNav ul.social li {
+    display: block;
+    background: #69adda; }
+  header .leftNav ul.social li:last-child {
+    padding-bottom: 685px; }
+header li {
+  display: inline-block;
+  padding: 0 14px;
+  font-size: 31px; }
+
+#slider {
+  margin: 40px auto; }
+
+.box {
+  background: #f1f5f7;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); }
+
+.box.row-fluid {
+  width: 80.333%;
+  margin-left: 16%;
+  padding-left: 4%; }
+
+#events h2, #feed h2 {
+  color: #0969a7;
+  border-bottom: 1px solid #38bef1;
+  font-size: 34px;
+  padding-bottom: 9px;
+  margin-right: 47px; }
+
+#feed ul {
+  border-right: 2px solid #38bef1; }
+#feed li {
+  display: block;
+  border-bottom: #dadedf 1px solid;
+  padding: 1em 0; }
+  #feed li img {
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    vertical-align: inherit;
+    margin-right: 10px; }
+  #feed li span {
+    display: inline-block;
+    width: 74%; }
+    #feed li span h3 {
+      display: block;
+      color: #69ADDA;
+      font-size: 27px;
+      margin: 4px 0 0 0;
+      padding: 0; }
+    #feed li span p {
+      display: block; }
+
+#events li {
+  display: block;
+  border-bottom: #dadedf 1px solid; }
+  #events li .left {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    border-right: #DADEDF 1px solid; }
+    #events li .left h3, #events li .left h4 {
+      color: #69adda;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      line-height: 1em;
+      font-size: 24px; }
+    #events li .left h3 {
+      font-size: 38px;
+      margin-top: 30%; }
+  #events li .right {
+    display: inline-block;
+    width: 64%; }
+    #events li .right strong {
+      font-weight: normal;
+      color: #808080;
+      font-size: 24px;
+      padding: 0;
+      display: block;
+      margin-top: 3px; }
