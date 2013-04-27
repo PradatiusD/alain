@@ -24,17 +24,25 @@
                 <section class="leftNav">
                     <ul class="social" align="center">
                         <li class="home"><a href=""><img src="img/home.png" alt=""><br>Inicio</a></li>
-                        <li><a href="#"><img src="img/facebook.png" alt=""></a></li>
-                        <li><a href="#"><img src="img/twitter.png" alt=""></a></li>
-                        <li><a href="#"><img src="img/mail.png" alt=""></a></li>
+                        <li><a target="_blank" href="https://www.facebook.com/alain.pupo"><img src="img/facebook.png" alt=""></a></li>
+                        <li><a target="_blank" href="https://twitter.com/alainpupo"><img src="img/twitter.png" alt=""></a></li>
+                        <li><a target="_blank" href="mailto:alainclarividente@yahoo.com?Subject=Hola%20Alain!"><img src="img/mail.png" alt=""></a></li>
                     </ul>
                 </section>
                 <nav class="topNav">
                     <ul align="center">
+                        <li class="desktopmenu"><a href="#">Biografia</a></li>
+                        <li class="desktopmenu"><a href="#">Videos</a></li>
+                        <li class="desktopmenu"><a href="#">Fotos</a></li>
+                        <li class="logo"><a href="#"><img src="img/Logo.png" alt=""></a></li>
+                        <li class="desktopmenu"><a href="#">Eventos</a></li>
+                        <li class="desktopmenu"><a href="#">Contacto</a></li>
+                        <li class="desktopmenu"><a href="#">Tienda</a></li>
+                    </ul>
+                    <ul align="center" class="dropdownz">
                         <li><a href="#">Biografia</a></li>
                         <li><a href="#">Videos</a></li>
                         <li><a href="#">Fotos</a></li>
-                        <li class="logo"><a href="#"><img src="img/Logo.png" alt=""></a></li>
                         <li><a href="#">Eventos</a></li>
                         <li><a href="#">Contacto</a></li>
                         <li><a href="#">Tienda</a></li>
@@ -47,10 +55,8 @@
             <section id="slider" class="row-fluid">
                 <div id="banner-fade" class="span10 offset2">
                     <ul class="bjqs">
+                        <li><iframe width="950" height="534" src="http://www.youtube.com/embed/R0JTzWNVUXY?rel=0&autoplay=1?wmode=transparent" frameborder="0" allowfullscreen></iframe></li>
                         <li><img src="img/slide1.jpg" alt=""></li>
-                        <li><img src="http://placehold.it/940x400&text=slide+2" alt=""></li>
-                        <li><img src="http://placehold.it/940x400&text=slide+3" alt=""></li>
-                        <li><img src="http://placehold.it/940x400&text=slide+4" alt=""></li>
                     </ul>
                 </div>
             </section>
@@ -58,23 +64,9 @@
             <section class="box row-fluid">
                 <div id="feed" class="span6">
                     <h2>Lo que la gente esta diciendo</h2>
-                    <ul>
-                        <li>
-                            <img src="img/user.png" alt="">
-                            <span><h3>Betzy La Gatita</h3>
-                            <p>LNO temas a las sombras. Solo te dejan saber que en algun lugar cercano hay una luz resplandeciente".@AlainPupo</p></span>
-                        </li>
-                        <li>
-                            <img src="img/user.png" alt="">
-                            <span><h3>El ZOL 95.7FM</h3>
-                            <p>RT @AlainPupo: Hoy a las 10pm MegaTv el gran clarividente@AlainPupo y @LauFerretti en un programa IMPACTANTE Manana a las 6p @957miami</p>
-                        </li></span>
-                        <li>
-                            <img src="img/user.png" alt="">
-                            <span><h3>Fernando Hidalgo</h3>
-                            <p>Muchas gracias a @alainpupo por su intervencion en @showfernandoTV @MegaTVLive ayer. Y bienvenido a la familia de @MegaTVLive</p></span>
-                        </li>
-                    </ul>
+                    <a class="twitter-timeline" href="https://twitter.com/AlainPupo" data-chrome="transparent" data-widget-id="327986470440812546">Tweets by @AlainPupo</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+                    </script>
                 </div>
                 <div id="events" class="span6">
                     <h2>Vea a Alain El Clarevidente</h2>
@@ -144,8 +136,9 @@
         <script>
             jQuery(document).ready(function($) {
                 $('#banner-fade').bjqs({
-                    'height' : 400,
+                    'height' : 534,
                     'width' : 960,
+                    'automatic' : false,
                     'responsive' : true
                 });
             });

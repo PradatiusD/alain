@@ -10,7 +10,8 @@ body {
   background: #f4eeee; }
 
 h1, h2, h3, h4, h5 {
-  font-weight: normal; }
+  font-weight: normal;
+  margin-top: 1em; }
 
 ul {
   list-style-type: none;
@@ -19,7 +20,12 @@ ul {
 
 p {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #a1abaf; }
+  color: #a1abaf;
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px; }
 
 header.header {
   position: fixed;
@@ -39,13 +45,21 @@ header.header {
     header.header .topNav li:last-child a {
       color: white; }
     header.header .topNav a {
-      color: #f0c343; }
+      color: #f0c343;
+      -webkit-transition: all 0.4s;
+      -moz-transition: all 0.4s;
+      transition: all 0.4s; }
+      header.header .topNav a:hover {
+        color: white;
+        text-decoration: none; }
     header.header .topNav .logo {
       position: relative;
       bottom: 35px; }
       header.header .topNav .logo img {
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         border: 2px solid #D8BD3C; }
+    header.header .topNav ul.dropdownz {
+      display: none; }
   header.header .leftNav ul.social {
     position: fixed;
     top: 0; }
@@ -69,6 +83,24 @@ header.header {
     display: inline-block;
     padding: 0 14px;
     font-size: 31px; }
+  @media only screen and (max-width: 1159px) {
+    header.header {
+      position: relative;
+      width: 110%;
+      right: 5%; }
+      header.header .leftNav {
+        display: none; }
+      header.header .topNav li {
+        margin-top: .5em; }
+      header.header .topNav .logo {
+        width: 100%; }
+      header.header .topNav ul.dropdownz {
+        display: block; }
+      header.header li {
+        padding: 0 1%;
+        font-size: 28px; }
+      header.header li.desktopmenu {
+        display: none; } }
 
 #main {
   margin-top: 120px; }
@@ -96,6 +128,10 @@ header.header {
   width: 80.333%;
   margin-left: 16%;
   padding-left: 4%; }
+  @media only screen and (max-width: 1159px) {
+    .box.row-fluid {
+      width: 100%;
+      margin-left: 0%; } }
 
 #events h2, #feed h2 {
   color: #0969a7;
@@ -131,7 +167,8 @@ header.header {
 #events li {
   display: block;
   border-bottom: #dadedf 1px solid;
-  padding: 10px 0px; }
+  padding: 10px 0px;
+  overflow: hidden; }
   #events li .left {
     display: inline-block;
     width: 30%;
@@ -158,6 +195,13 @@ header.header {
       padding: 0;
       display: block;
       margin-top: 3px; }
+
+.timeline {
+  background: none !important;
+  border: 0 !important; }
+
+.summary .customisable-highlight {
+  visibility: hidden !important; }
 
 #blog {
   margin-top: 30px; }
@@ -215,7 +259,7 @@ header.header {
     #blog .body p {
       color: #909598;
       font-size: 17px; }
-    #blog .body blockquote {
+    #blog .body blockquote p {
       font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
       font-size: 16px;
       border-left: 7px solid #38BEF1;
