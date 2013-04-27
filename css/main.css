@@ -246,22 +246,30 @@ header.header {
         color: #fff; }
       #blog .span6 form input:focus {
         outline: none; }
-  #blog .body {
-    padding: 0% 5% 0% 0%; }
-    #blog .body h4 {
-      color: #909598;
-      font-size: 38px;
-      border-bottom: 2px solid #38BEF1;
-      font-weight: normal;
-      margin: 16px 0px;
-      width: 40%;
-      padding-bottom: 10px; }
-    #blog .body p {
-      color: #909598;
-      font-size: 17px; }
-    #blog .body blockquote p {
-      font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
-      font-size: 16px;
-      border-left: 7px solid #38BEF1;
-      padding: 0px 16px;
-      color: #b6b6b6; }
+
+.body {
+  padding: 0% 5% 0% 0%; }
+  .body h4 {
+    color: #909598;
+    font-size: 38px;
+    border-bottom: 2px solid #38BEF1;
+    font-weight: normal;
+    margin: 16px 0px;
+    width: 40%;
+    padding-bottom: 10px; }
+    @media only screen and (max-width: 420px) {
+      .body h4 {
+        width: 100%;
+        margin-top: 1em; } }
+  .body p {
+    color: #909598;
+    font-size: 17px; }
+  .body p img {
+    float: none;
+    margin: 0 auto; }
+  .body blockquote p {
+    font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+    font-size: 16px;
+    border-left: 7px solid #38BEF1;
+    padding: 0px 16px;
+    color: #b6b6b6; }
