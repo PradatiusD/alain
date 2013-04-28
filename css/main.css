@@ -273,3 +273,25 @@ header.header {
     border-left: 7px solid #38BEF1;
     padding: 0px 16px;
     color: #b6b6b6; }
+
+.contact div.mc-field-group {
+  display: inline-block; }
+.contact input[type="email"], .contact input[type="number"], .contact input[type="password"], .contact input[type="search"], .contact input[type="tel"], .contact input[type="text"], .contact input[type="url"], .contact input[type="color"], .contact input[type="date"], .contact input[type="datetime"], .contact input[type="datetime-local"], .contact input[type="month"], .contact input[type="time"], .contact input[type="week"] {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #7AA7AD;
+  width: 366px;
+  margin: 12px;
+  color: #494949;
+  display: inline-block; }
+.contact .phonefield input[type="text"] {
+  width: 120px; }
+.contact input[type="submit"] {
+  padding: .5em 2.5em;
+  font-size: 30px;
+  font-family: 'Bebas';
+  background: #69ADDA;
+  border: none;
+  color: #FFF;
+  border-radius: 14px; }

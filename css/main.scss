@@ -365,3 +365,40 @@ header.header {
 		color:#b6b6b6;
 	}
 }
+
+.contact {
+	div.mc-field-group {
+		display: inline-block;	
+	}
+
+	#{$all-text-inputs} {
+		font-size: 18px;
+		padding: 10px;
+		border-radius: 3px;
+		border: 1px solid #7AA7AD;
+		width: 366px;
+		margin: 12px;
+		color: #494949;
+		display: inline-block;
+	}
+	#{$all-text-inputs-hover} {
+
+	}
+	#{$all-text-inputs-focus} { 
+
+	}
+	.phonefield {
+		input[type="text"]{
+			width:120px;
+		}
+	}
+	input[type="submit"]{
+		padding: .5em 2.5em;
+		font-size: 30px;
+		font-family: 'Bebas';
+		background: #69ADDA;
+		border: none;
+		color: #FFF;
+		border-radius: 14px;
+	}
+}
