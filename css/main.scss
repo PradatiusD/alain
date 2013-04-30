@@ -27,7 +27,7 @@ ul {
 		padding: 0;
 }
 
-p {
+p, .post_content {
 	font-family: $helvetica;
 	color:#a1abaf;
 	display: block;
@@ -75,9 +75,19 @@ header.header {
 				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 				border: 2px solid #D8BD3C;
 			}
+			@media only screen and (max-width:330px) {
+				display: block;
+				bottom: 0;
+				margin: 10px auto;
+				padding: 10px 0;
+			}
 		}
 	ul.dropdownz {
 			display: none;
+			@media only screen and (max-width:330px) {
+				display: block;
+				padding: 29px 9px 3px 9px;
+			}
 		}
 	}
 	.leftNav{
@@ -149,8 +159,20 @@ header.header {
 }
 }
 
+.bjqs-prev a , .bjqs-next a {
+  background: rgba(74, 100, 202, 0.62);
+  font-family: arial;
+  color: #FFF;
+  padding: 1em;
+  text-transform: uppercase;
+  font-size: 11px; 
+}
+
 #main {
 	margin-top: 120px;
+	@media only screen and (max-width:330px) {
+		margin-top:0px;
+	}
 }
 
 #slider {
@@ -196,6 +218,7 @@ header.header {
 	font-size: 34px;
 	padding-bottom: 9px;
 	margin-right: 47px;
+	line-height:1em;
 }
 
 #feed {
@@ -269,7 +292,35 @@ header.header {
 			}
 		}
 	}
-
+	//Breakpoint for mobile
+ @media only screen and (max-width:330px) {
+ 	h2 {
+ 		text-align: center;
+		margin: 0 auto;
+		width: 95%;
+ 	}
+ 	li{
+ 		.left{
+ 			width:95%;
+ 			display: block;
+ 			border-right:none;
+ 			border-bottom: #DADEDF 1px solid;
+ 			h3 {
+				margin-top:10px;
+ 			}
+ 		}
+ 		.right {
+			width:95%;
+			display: block;
+			strong {
+				text-align:center;
+			}
+			p {
+				text-align: center;
+			}
+ 		}
+ 	}
+ }
 }
 
 .timeline {
@@ -282,6 +333,9 @@ header.header {
 
 #blog {
 	margin-top:30px;
+	.row-fluid {
+		margin-bottom:30px;
+	}
 	span {
 		border-bottom: 1px solid #38BEF1;
 		display: inline-block;
@@ -328,6 +382,25 @@ header.header {
 				}
 			}
 		}
+	}
+	@media only screen and (max-width:330px) {
+		.span6 {
+			h1 {
+				line-height:1em;
+			}
+			h4 {
+				line-height: 1em;
+				text-align: center;
+				margin: 10px auto;
+			}
+			form input {
+				font-size: 15px;
+				padding: 10px;
+				display: inline-block;
+				margin: 10px auto;
+				width: 45%;
+			}
+		}
 	}	
 }
 
@@ -346,6 +419,23 @@ header.header {
 			margin-top: 1em;
 		}
 	}
+	h4.headline {
+		width: 95%;
+		color: #909598;
+		font-size: 38px;
+		border-bottom: 2px solid #38BEF1;
+		font-weight: normal;
+		margin: 16px 0px;
+			a {
+			color: #909598;
+			@include transition (all 0.3s);
+			&:hover {
+				color: #005580;
+				text-decoration: none;
+			}
+		}
+	}
+
 	p {
 		color:#909598;
 		font-size:17px;
