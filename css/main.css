@@ -162,6 +162,15 @@ header.header {
   margin-right: 47px;
   line-height: 1em; }
 
+h1.headline {
+  color: #0969a7;
+  border-bottom: 1px solid #38bef1;
+  font-size: 44px;
+  padding-bottom: 9px;
+  margin-right: 47px;
+  line-height: .9em;
+  padding-left: .25em; }
+
 #feed ul {
   border-right: 2px solid #38bef1;
   padding-right: 30px; }
@@ -251,7 +260,8 @@ header.header {
   #blog span {
     border-bottom: 1px solid #38BEF1;
     display: inline-block;
-    width: 95%; }
+    width: 95%;
+    padding-bottom: 11px; }
   #blog img {
     float: right; }
   #blog .span6 h1 {
@@ -269,9 +279,12 @@ header.header {
     font-size: 34px;
     padding-bottom: 9px;
     margin-right: 47px;
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    margin-top: 38px; }
   #blog .span6 form {
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    padding-top: 4px;
+    display: block; }
     #blog .span6 form input {
       border-radius: 14px;
       background: #CFCD2F;
@@ -334,7 +347,8 @@ header.header {
         text-decoration: none; }
   .body p {
     color: #909598;
-    font-size: 17px; }
+    font-size: 17px;
+    line-height: 1.4em; }
   .body p img {
     float: none;
     margin: 0 auto; }
@@ -345,8 +359,19 @@ header.header {
     padding: 0px 16px;
     color: #b6b6b6; }
 
-.contact div.mc-field-group {
+.contact .phonearea, .contact .phonedetail1, .contact .phonedetail2 {
   display: inline-block; }
+.contact .phonefield {
+  display: block; }
+.contact .mc-field-group {
+  display: block; }
+.contact .mce-TEEFONO {
+  cursor: default;
+  margin: 10px 0px 0px 13px;
+  font-size: 20px;
+  display: inline-block;
+  line-height: 1em;
+  padding-bottom: 0px; }
 .contact input[type="email"], .contact input[type="number"], .contact input[type="password"], .contact input[type="search"], .contact input[type="tel"], .contact input[type="text"], .contact input[type="url"], .contact input[type="color"], .contact input[type="date"], .contact input[type="datetime"], .contact input[type="datetime-local"], .contact input[type="month"], .contact input[type="time"], .contact input[type="week"] {
   font-size: 18px;
   padding: 10px;

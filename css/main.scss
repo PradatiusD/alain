@@ -221,6 +221,16 @@ header.header {
 	line-height:1em;
 }
 
+h1.headline {
+	color: #0969a7;
+	border-bottom: 1px solid #38bef1;
+	font-size: 44px;
+	padding-bottom: 9px;
+	margin-right: 47px;
+	line-height: .9em;
+	padding-left: .25em;
+}
+
 #feed {
 	ul{
 		border-right:2px solid #38bef1;
@@ -340,6 +350,7 @@ header.header {
 		border-bottom: 1px solid #38BEF1;
 		display: inline-block;
 		width: 95%;
+		padding-bottom:11px;
 	}
 	img {
 		float: right;
@@ -362,10 +373,13 @@ header.header {
 		font-size: 34px;
 		padding-bottom: 9px;
 		margin-right: 47px;
-		margin-bottom: 5px
+		margin-bottom: 5px;
+		margin-top:38px;
 		}
 		form {
 			margin-bottom: 5px;
+			padding-top: 4px;
+			display: block;
 
 			input{
 				border-radius: 14px;
@@ -437,8 +451,9 @@ header.header {
 	}
 
 	p {
-		color:#909598;
-		font-size:17px;
+		color: #909598;
+		font-size: 17px;
+		line-height: 1.4em;
 	}
 
 	p img {
@@ -457,8 +472,24 @@ header.header {
 }
 
 .contact {
-	div.mc-field-group {
-		display: inline-block;	
+	.phonearea, .phonedetail1, .phonedetail2 {
+	    display: inline-block;
+	}
+
+	.phonefield {
+	    display:block;
+	}
+	.mc-field-group {
+	    display: block;
+	}
+
+	.mce-TEEFONO {
+		cursor: default;
+		margin: 10px 0px 0px 13px;
+		font-size: 20px;
+		display: inline-block;
+		line-height: 1em;
+		padding-bottom: 0px;
 	}
 
 	#{$all-text-inputs} {
