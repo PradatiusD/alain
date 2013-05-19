@@ -62,6 +62,7 @@ header.header {
 		ul {
 			height:86px;
 			margin-top:15px;
+			margin-left: 14%;
 		}		
 		li {
 			vertical-align: top;
@@ -142,34 +143,62 @@ header.header {
 
 	}
 // Breakpoint for header.header navigation at 1159px
-@media only screen and (max-width:1159px) {
-	position: relative;
-	width: 110%;
-	right: 5%;
+	@media only screen and (max-width:1159px) {
+		position: relative;
+		width: 110%;
+		right: 5%;
 
-	.leftNav{
-		display: none;
-	}
+		.leftNav{
+			display: none;
+		}
 
-	.topNav {
-		li{
-			margin-top:.5em;
+		.topNav {
+			ul {
+			margin-left:0%;
+			}
+			li{
+				margin-top:.5em;
+
+			}
+			.logo {
+				width:100%;
+				margin: 0 auto;
+				display: block;
+				position: relative;
+				bottom: 0;
+				img {
+					display: block;
+					width: 285px;
+					margin: 0 auto;
+				}
+			}
+			ul.dropdownz {
+				display: block;
+				position: relative;
+				top: 0px;
+				left: 0px;
+				margin: 2em 0px 0px 20%;
+				padding: 0px;
+			}
 		}
-		.logo {
-			width:100%;
+		li {
+			padding:0 1%;
+			font-size:28px;
 		}
-		ul.dropdownz {
-			display: block;
+		li.desktopmenu {
+			display:none;
 		}
 	}
-	li {
-		padding:0 1%;
-		font-size:28px;
+	// Breakpoint for navigation navigation at 485px
+	@media only screen and (max-width:485px) {
+		.topNav {
+			ul.dropdownz {
+				margin-left:0%;
+				margin: 2em auto;
+				text-align: center;
+			}
+		}
 	}
-	li.desktopmenu {
-		display:none;
-	}
-}
 }
 
 .bjqs-prev a , .bjqs-next a {
@@ -507,7 +536,7 @@ h1.headline {
 	    display: block;
 	}
 
-	
+
 
 	.mce-TEEFONO {
 		cursor: default;
