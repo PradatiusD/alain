@@ -37,6 +37,19 @@ p, .post_content {
 	-webkit-margin-end: 0px;
 }
 
+.post_content {
+	p, div {
+		@media only screen and (max-width:400px) {
+		div {
+			margin:0px;
+			padding:0px;
+		}
+		padding: 0px 20px 10px 10px;
+		text-align: justify;
+		}
+	}
+}
+
 header.header {
 	position: fixed;
 	top: 0;
@@ -75,7 +88,7 @@ header.header {
 				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 				border: 2px solid #D8BD3C;
 			}
-			@media only screen and (max-width:330px) {
+			@media only screen and (max-width:400px) {
 				display: block;
 				bottom: 0;
 				margin: 10px auto;
@@ -84,7 +97,7 @@ header.header {
 		}
 	ul.dropdownz {
 			display: none;
-			@media only screen and (max-width:330px) {
+			@media only screen and (max-width:400px) {
 				display: block;
 				padding: 29px 9px 3px 9px;
 			}
@@ -170,7 +183,7 @@ header.header {
 
 #main {
 	margin-top: 120px;
-	@media only screen and (max-width:330px) {
+	@media only screen and (max-width:400px) {
 		margin-top:0px;
 	}
 }
@@ -229,6 +242,15 @@ h1.headline {
 	margin-right: 47px;
 	line-height: .9em;
 	padding-left: .25em;
+			@media only screen and (max-width:420px) {
+		font-size: 26px;
+		text-align: center;
+		display: block;
+		margin: 14px auto 0 auto;
+		width: 80%;
+		position: relative;
+		right: 2%;
+		}
 }
 
 #feed {
@@ -303,7 +325,7 @@ h1.headline {
 		}
 	}
 	//Breakpoint for mobile
- @media only screen and (max-width:330px) {
+ @media only screen and (max-width:400px) {
  	h2 {
  		text-align: center;
 		margin: 0 auto;
@@ -397,7 +419,7 @@ h1.headline {
 			}
 		}
 	}
-	@media only screen and (max-width:330px) {
+	@media only screen and (max-width:400px) {
 		.span6 {
 			h1 {
 				line-height:1em;
@@ -431,6 +453,8 @@ h1.headline {
 		@media only screen and (max-width:420px) {
 			width:100%;
 			margin-top: 1em;
+			line-height: 1em;
+			text-align: center;
 		}
 	}
 	h4.headline {
@@ -452,7 +476,7 @@ h1.headline {
 
 	p {
 		color: #909598;
-		font-size: 17px;
+		font-size: 14px;
 		line-height: 1.4em;
 	}
 
@@ -483,6 +507,8 @@ h1.headline {
 	    display: block;
 	}
 
+	
+
 	.mce-TEEFONO {
 		cursor: default;
 		margin: 10px 0px 0px 13px;
@@ -501,6 +527,12 @@ h1.headline {
 		margin: 12px;
 		color: #494949;
 		display: inline-block;
+		@include transition (all 0.3s);
+		@media only screen and (max-width:420px){
+			width: 80%;
+			font-size: 1em;
+		}
+
 	}
 	#{$all-text-inputs-hover} {
 
@@ -511,6 +543,10 @@ h1.headline {
 	.phonefield {
 		input[type="text"]{
 			width:120px;
+			@media only screen and (max-width:420px){
+				width: 16%;
+				margin: 0px 4%;
+			}
 		}
 	}
 	input[type="submit"]{
