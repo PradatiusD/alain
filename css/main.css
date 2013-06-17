@@ -11,7 +11,8 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-weight: normal;
-  margin-top: 1em; }
+  margin-top: 1em;
+  line-height: 1em; }
 
 ul {
   list-style-type: none;
@@ -43,16 +44,17 @@ header.header {
   header.header .topNav {
     font-size: 23px;
     background: #216abb;
+    overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); }
-    header.header .topNav ul {
-      height: 86px;
-      margin-top: 15px;
+    header.header .topNav ul:first-of-type {
       margin-left: 14%; }
+      header.header .topNav ul:first-of-type li {
+        vertical-align: middle; }
     header.header .topNav li {
-      vertical-align: top;
-      margin-top: 35px; }
+      vertical-align: top; }
     header.header .topNav li:last-child a {
-      color: white; }
+      color: white;
+      text-decoration: none; }
     header.header .topNav a {
       color: #f0c343;
       -webkit-transition: all 0.4s;
@@ -61,20 +63,18 @@ header.header {
       header.header .topNav a:hover {
         color: white;
         text-decoration: none; }
-    header.header .topNav .logo {
-      position: relative;
-      bottom: 35px; }
-      header.header .topNav .logo img {
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        border: 2px solid #D8BD3C; }
-      @media only screen and (max-width: 400px) {
-        header.header .topNav .logo {
-          display: block;
-          bottom: 0;
-          margin: 10px auto;
-          padding: 10px 0; } }
+    header.header .topNav .logo img {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      border: 2px solid #D8BD3C; }
+    @media only screen and (max-width: 400px) {
+      header.header .topNav .logo {
+        display: block;
+        bottom: 0;
+        margin: 10px auto;
+        padding: 10px 0; } }
     header.header .topNav ul.dropdownz {
-      display: none; }
+      display: none;
+      text-align: center; }
       @media only screen and (max-width: 400px) {
         header.header .topNav ul.dropdownz {
           display: block;
@@ -110,9 +110,12 @@ header.header {
       header.header .leftNav {
         display: none; }
       header.header .topNav ul {
-        margin-left: 0%; }
+        margin: 0;
+        height: auto; }
+        header.header .topNav ul:first-of-type {
+          margin-left: 0; }
       header.header .topNav li {
-        margin-top: .5em; }
+        margin-top: 0.5em; }
       header.header .topNav .logo {
         width: 100%;
         margin: 0 auto;
@@ -128,7 +131,7 @@ header.header {
         position: relative;
         top: 0px;
         left: 0px;
-        margin: 2em 0px 0px 20%;
+        margin: 0 2em;
         padding: 0px; }
       header.header li {
         padding: 0 1%;
@@ -137,9 +140,18 @@ header.header {
         display: none; } }
   @media only screen and (max-width: 485px) {
     header.header .topNav ul.dropdownz {
-      margin-left: 0%;
-      margin: 2em auto;
-      text-align: center; } }
+      margin: 0;
+      text-align: center;
+      height: 49px; }
+      header.header .topNav ul.dropdownz li {
+        display: block;
+        margin: 0;
+        padding: 0.25em 0;
+        border-top: 1px solid white; }
+        header.header .topNav ul.dropdownz li a {
+          font-size: 28px;
+          letter-spacing: 1px;
+          text-decoration: none; } }
 
 .bjqs-prev a, .bjqs-next a {
   background: rgba(74, 100, 202, 0.62);
@@ -151,9 +163,14 @@ header.header {
 
 #main {
   margin-top: 120px; }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 1159px) {
     #main {
       margin-top: 0px; } }
+
+@media only screen and (max-width: 1159px) {
+  #banner-fade {
+    margin: 0;
+    width: 100%; } }
 
 #slider {
   margin: 51px auto; }
@@ -178,10 +195,16 @@ header.header {
   width: 80.333%;
   margin-left: 16%;
   padding-left: 4%; }
-  @media only screen and (max-width: 1159px) {
+  @media only screen and (min-width: 481px) and (max-width: 1159px) {
     .box.row-fluid {
-      width: 100%;
-      margin-left: 0%; } }
+      width: 95%;
+      margin: 0;
+      padding: 0 2.5%; } }
+  @media only screen and (max-width: 480px) {
+    .box.row-fluid {
+      width: 90%;
+      margin: 0;
+      padding: 0 5%; } }
 
 #events h2, #feed h2 {
   color: #0969a7;
@@ -237,12 +260,17 @@ h1.headline {
   display: block;
   border-bottom: #dadedf 1px solid;
   padding: 10px 0px;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0; }
   #events li .left {
     display: inline-block;
     width: 30%;
     vertical-align: top;
-    border-right: #DADEDF 1px solid; }
+    border-right: #DADEDF 1px solid;
+    position: absolute;
+    height: 95%; }
     #events li .left h3, #events li .left h4 {
       color: #69adda;
       text-align: center;
@@ -273,7 +301,8 @@ h1.headline {
     width: 95%;
     display: block;
     border-right: none;
-    border-bottom: #DADEDF 1px solid; }
+    border-bottom: #DADEDF 1px solid;
+    position: static; }
     #events li .left h3 {
       margin-top: 10px; }
   #events li .right {
@@ -363,12 +392,12 @@ h1.headline {
     font-weight: normal;
     margin: 16px 0px;
     width: 40%;
-    padding-bottom: 10px; }
-    @media only screen and (max-width: 420px) {
+    padding-bottom: 10px;
+    line-height: 1em; }
+    @media only screen and (max-width: 480px) {
       .body h4 {
         width: 100%;
         margin-top: 1em;
-        line-height: 1em;
         text-align: center; } }
   .body h4.headline {
     width: 95%;

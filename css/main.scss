@@ -11,14 +11,19 @@
     font-style: normal;
 }
 
+// Colors
+
+$faded-gray: #909598;
+
 body {
-	font-family: 'Bebas';
+	font-family : 'Bebas';
 	background: #f4eeee;
 }
 
 h1, h2, h3, h4, h5 {
 	font-weight: normal;
 	margin-top:1em;
+	line-height:1em;
 }
 
 ul {
@@ -58,19 +63,21 @@ header.header {
 	.topNav {
 		font-size:23px;
 		background:#216abb;
+		overflow: hidden;
 		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-		ul {
-			height:86px;
-			margin-top:15px;
+		ul:first-of-type {
 			margin-left: 14%;
+			li {
+				vertical-align: middle;
+			}
 		}		
 		li {
 			vertical-align: top;
-			margin-top: 35px;
 		}
 		li:last-child{
 			a {
 				color:white;
+				text-decoration: none;
 			}
 		}
 
@@ -83,8 +90,6 @@ header.header {
 			}
 		}
 		.logo {
-			position: relative;
-			bottom:35px;
 			img {
 				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 				border: 2px solid #D8BD3C;
@@ -98,6 +103,7 @@ header.header {
 		}
 	ul.dropdownz {
 			display: none;
+			text-align: center;
 			@media only screen and (max-width:400px) {
 				display: block;
 				padding: 29px 9px 3px 9px;
@@ -154,10 +160,14 @@ header.header {
 
 		.topNav {
 			ul {
-			margin-left:0%;
+				margin:0;
+				height: auto;
+				&:first-of-type {
+					margin-left:0;	
+				}
 			}
 			li{
-				margin-top:.5em;
+				margin-top:0.5em;
 
 			}
 			.logo {
@@ -177,7 +187,7 @@ header.header {
 				position: relative;
 				top: 0px;
 				left: 0px;
-				margin: 2em 0px 0px 20%;
+				margin: 0 2em;
 				padding: 0px;
 			}
 		}
@@ -189,13 +199,24 @@ header.header {
 			display:none;
 		}
 	}
-	// Breakpoint for navigation navigation at 485px
+	// Breakpoint for mobile navigation at 485px
 	@media only screen and (max-width:485px) {
 		.topNav {
 			ul.dropdownz {
-				margin-left:0%;
-				margin: 2em auto;
+				margin: 0;
 				text-align: center;
+				height:49px;
+				li {
+					display: block;
+					margin: 0;
+					padding: 0.25em 0;
+					border-top: 1px solid white;
+					a {
+						font-size: 28px;
+						letter-spacing: 1px;
+						text-decoration: none;
+					}
+				}
 			}
 		}
 	}
@@ -212,8 +233,15 @@ header.header {
 
 #main {
 	margin-top: 120px;
-	@media only screen and (max-width:400px) {
+	@media only screen and (max-width:1159px) {
 		margin-top:0px;
+	}
+}
+
+#banner-fade {
+	@media only screen and (max-width:1159px) {
+		margin:0;
+		width:100%;
 	}
 }
 
@@ -248,9 +276,16 @@ header.header {
 	margin-left: 16%;
 	padding-left: 4%;
 	// Breakpoint for when left nav is gone
-	@media only screen and (max-width:1159px) {
-		width:100%;
-		margin-left: 0%;
+	@media only screen and (min-width:481px) and (max-width:1159px){
+		width: 95%;
+		margin: 0;
+		padding: 0 2.5%;
+	}
+	// Breakpoint for mobile viewing
+	@media only screen and (max-width:480px){
+		width: 90%;
+		margin: 0;
+		padding: 0 5%;
 	}
 }
 
@@ -321,11 +356,16 @@ h1.headline {
 		border-bottom: #dadedf 1px solid;
 		padding:10px 0px;
 		overflow: hidden;
+		position: relative;
+		top:0;
+		left:0;
 		.left{
 			display: inline-block;
 			width: 30%;
 			vertical-align: top;
 			border-right:#DADEDF 1px solid;
+			position:absolute;
+			height:95%;
 			h3,h4 {
 				color:#69adda;
 				text-align: center;
@@ -366,6 +406,7 @@ h1.headline {
  			display: block;
  			border-right:none;
  			border-bottom: #DADEDF 1px solid;
+ 			position:static;
  			h3 {
 				margin-top:10px;
  			}
@@ -472,29 +513,29 @@ h1.headline {
 .body {
 	padding:0% 5% 0% 0%;
 	h4 {
-		color: #909598;
+		color: $faded-gray;
 		font-size: 38px;
 		border-bottom: 2px solid #38BEF1;
 		font-weight: normal;
 		margin: 16px 0px;
 		width: 40%;
 		padding-bottom: 10px;
-		@media only screen and (max-width:420px) {
+		line-height:1em;
+		@media only screen and (max-width:480px) {
 			width:100%;
 			margin-top: 1em;
-			line-height: 1em;
 			text-align: center;
 		}
 	}
 	h4.headline {
 		width: 95%;
-		color: #909598;
+		color: $faded-gray;
 		font-size: 38px;
 		border-bottom: 2px solid #38BEF1;
 		font-weight: normal;
 		margin: 16px 0px;
 			a {
-			color: #909598;
+			color: $faded-gray;
 			@include transition (all 0.3s);
 			&:hover {
 				color: #005580;
@@ -504,7 +545,7 @@ h1.headline {
 	}
 
 	p {
-		color: #909598;
+		color: $faded-gray;
 		font-size: 14px;
 		line-height: 1.4em;
 	}
