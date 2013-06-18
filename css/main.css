@@ -6,7 +6,7 @@
   font-style: normal; }
 
 body {
-  font-family: 'Bebas';
+  font-family: "Bebas", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #f4eeee; }
 
 h1, h2, h3, h4, h5 {
@@ -21,13 +21,18 @@ ul {
 
 p, .post_content {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #a1abaf;
+  font-weight: 300;
+  line-height: 1.3em;
+  font-size: 18px;
+  color: #909598;
   display: block;
   -webkit-margin-before: 1em;
   -webkit-margin-after: 1em;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px; }
 
+.post_content p {
+  text-align: justify; }
 @media only screen and (max-width: 400px) {
   .post_content p, .post_content div {
     padding: 0px 20px 10px 10px;
@@ -192,18 +197,23 @@ header.header {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); }
 
 .box.row-fluid {
-  width: 80.333%;
-  margin-left: 16%;
-  padding-left: 4%; }
-  @media only screen and (min-width: 481px) and (max-width: 1159px) {
+  width: 76.333%;
+  margin-left: 13%;
+  padding: 0 4%; }
+  @media only screen and (min-width: 786px) and (max-width: 1159px) {
     .box.row-fluid {
       width: 95%;
       margin: 0;
       padding: 0 2.5%; } }
+  @media only screen and (min-width: 481px) and (max-width: 786px) {
+    .box.row-fluid {
+      width: 88%;
+      margin: 20px auto;
+      padding: 0 6%; } }
   @media only screen and (max-width: 480px) {
     .box.row-fluid {
       width: 90%;
-      margin: 0;
+      margin: 20px auto;
       padding: 0 5%; } }
 
 #events h2, #feed h2 {
@@ -218,10 +228,9 @@ h1.headline {
   color: #0969a7;
   border-bottom: 1px solid #38bef1;
   font-size: 44px;
-  padding-bottom: 9px;
-  margin-right: 47px;
-  line-height: .9em;
-  padding-left: .25em; }
+  line-height: 1em;
+  padding: 0 0 10px 0;
+  width: 100%; }
   @media only screen and (max-width: 420px) {
     h1.headline {
       font-size: 26px;
@@ -249,7 +258,7 @@ h1.headline {
     width: 74%; }
     #feed li span h3 {
       display: block;
-      color: #69ADDA;
+      color: #69adda;
       font-size: 27px;
       margin: 4px 0 0 0;
       padding: 0; }
@@ -325,29 +334,32 @@ h1.headline {
   #blog .row-fluid {
     margin-bottom: 30px; }
   #blog span {
-    border-bottom: 1px solid #38BEF1;
+    border-bottom: 1px solid #38bef1;
     display: inline-block;
     width: 95%;
     padding-bottom: 11px; }
   #blog img {
     float: right; }
   #blog .span6 h1 {
-    color: #0969A7;
+    color: #0969a7;
     text-align: center;
     font-size: 62px;
-    margin: 51px 0px 0px 10px; }
+    margin: 39px 0px 0px 10px; }
   #blog .span6 h2 {
     text-align: center;
     color: #69adda;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 54px 0 4px 0px; }
   #blog .span6 h4 {
-    color: #0969A7;
-    border-bottom: 1px solid #38BEF1;
+    color: #0969a7;
+    border-bottom: 1px solid #38bef1;
     font-size: 34px;
     padding-bottom: 9px;
     margin-right: 47px;
     margin-bottom: 5px;
-    margin-top: 38px; }
+    margin-top: 38px;
+    display: block;
+    width: 100%; }
   #blog .span6 form {
     margin-bottom: 5px;
     padding-top: 4px;
@@ -369,6 +381,11 @@ h1.headline {
         color: #fff; }
       #blog .span6 form input:focus {
         outline: none; }
+  #blog .span6:first-of-type h2 {
+    margin-top: 0; }
+  @media only screen and (max-width: 767px) {
+    #blog .span6 h4, #blog .span6 #mc_embed_signup {
+      text-align: center; } }
   @media only screen and (max-width: 400px) {
     #blog .span6 h1 {
       line-height: 1em; }
@@ -382,6 +399,10 @@ h1.headline {
       display: inline-block;
       margin: 10px auto;
       width: 45%; } }
+
+.mg_item_content h1 {
+  color: #0969a7;
+  font-size: 28px; }
 
 .body {
   padding: 0% 5% 0% 0%; }
@@ -402,9 +423,10 @@ h1.headline {
   .body h4.headline {
     width: 95%;
     color: #909598;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
     font-size: 38px;
     border-bottom: 2px solid #38BEF1;
-    font-weight: normal;
     margin: 16px 0px; }
     .body h4.headline a {
       color: #909598;
@@ -414,19 +436,26 @@ h1.headline {
       .body h4.headline a:hover {
         color: #005580;
         text-decoration: none; }
+    @media only screen and (max-width: 481px) {
+      .body h4.headline {
+        font-size: 28px; } }
   .body p {
     color: #909598;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.4em; }
   .body p img {
     float: none;
     margin: 0 auto; }
   .body blockquote p {
     font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     border-left: 7px solid #38BEF1;
     padding: 0px 16px;
     color: #b6b6b6; }
+
+@media only screen and (max-width: 767px) {
+  #post-51 {
+    text-align: center; } }
 
 .contact .phonearea, .contact .phonedetail1, .contact .phonedetail2 {
   display: inline-block; }
@@ -448,7 +477,7 @@ h1.headline {
   border: 1px solid #7AA7AD;
   width: 366px;
   margin: 12px;
-  color: #494949;
+  color: #909598;
   display: inline-block;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -467,7 +496,12 @@ h1.headline {
   padding: .5em 2.5em;
   font-size: 30px;
   font-family: 'Bebas';
-  background: #69ADDA;
+  background: #69adda;
   border: none;
   color: #FFF;
   border-radius: 14px; }
+.contact inputy[type="radio"] {
+  position: relative;
+  bottom: 2px;
+  display: inline-block;
+  margin-right: 3px; }

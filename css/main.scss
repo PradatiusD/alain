@@ -14,9 +14,17 @@
 // Colors
 
 $faded-gray: #909598;
+$dark-blue:#0969A7;
+$light-blue:#69adda;
+$body-gray:#656E72;
+
+// Mixins
+@mixin blue-border ($height) {
+	border-bottom:$height solid #38bef1
+}
 
 body {
-	font-family : 'Bebas';
+	font-family : 'Bebas', $helvetica;
 	background: #f4eeee;
 }
 
@@ -34,7 +42,10 @@ ul {
 
 p, .post_content {
 	font-family: $helvetica;
-	color:#a1abaf;
+	font-weight:300;
+	line-height:1.3em;
+	font-size:18px;
+	color:$faded-gray;
 	display: block;
 	-webkit-margin-before: 1em;
 	-webkit-margin-after: 1em;
@@ -43,6 +54,9 @@ p, .post_content {
 }
 
 .post_content {
+	p {
+		text-align:justify;
+	}
 	p, div {
 		@media only screen and (max-width:400px) {
 		div {
@@ -120,7 +134,7 @@ header.header {
 			}
 			li {
 				display: block;
-				background: #69adda;
+				background: $light-blue;
 				img {
 					margin:1em .125em;
 				}
@@ -272,26 +286,34 @@ header.header {
 }
 
 .box.row-fluid {
-	width: 80.333%;
-	margin-left: 16%;
-	padding-left: 4%;
+	width: 76.333%;
+	margin-left: 13%;
+	padding: 0 4%;
 	// Breakpoint for when left nav is gone
-	@media only screen and (min-width:481px) and (max-width:1159px){
+	@media only screen and (min-width:786px) and (max-width:1159px){
 		width: 95%;
 		margin: 0;
 		padding: 0 2.5%;
 	}
+
+	// Breakpoint for Tablet resolutions
+	@media only screen and (min-width:481px) and (max-width:786px){
+		width: 88%;
+		margin:20px auto;
+		padding: 0 6%;
+	}
+
 	// Breakpoint for mobile viewing
 	@media only screen and (max-width:480px){
 		width: 90%;
-		margin: 0;
+		margin:20px auto;
 		padding: 0 5%;
 	}
 }
 
 #events h2, #feed h2 {
-	color:#0969a7;
-	border-bottom:1px solid #38bef1;
+	color:$dark-blue;
+	@include blue-border(1px);
 	font-size: 34px;
 	padding-bottom: 9px;
 	margin-right: 47px;
@@ -299,13 +321,12 @@ header.header {
 }
 
 h1.headline {
-	color: #0969a7;
-	border-bottom: 1px solid #38bef1;
+	color: $dark-blue;
+	@include blue-border(1px);
 	font-size: 44px;
-	padding-bottom: 9px;
-	margin-right: 47px;
-	line-height: .9em;
-	padding-left: .25em;
+	line-height: 1em;
+	padding: 0 0 10px 0;
+	width: 100%;
 			@media only screen and (max-width:420px) {
 		font-size: 26px;
 		text-align: center;
@@ -337,7 +358,7 @@ h1.headline {
 			width: 74%;
 			h3 {
 			display:block;
-			color: #69ADDA;
+			color: $light-blue;
 			font-size: 27px;
 			margin: 4px 0 0 0;
 			padding: 0;	
@@ -367,7 +388,7 @@ h1.headline {
 			position:absolute;
 			height:95%;
 			h3,h4 {
-				color:#69adda;
+				color:$light-blue;
 				text-align: center;
 				margin: 0;
 				padding: 0;
@@ -439,7 +460,7 @@ h1.headline {
 		margin-bottom:30px;
 	}
 	span {
-		border-bottom: 1px solid #38BEF1;
+		@include blue-border(1px);
 		display: inline-block;
 		width: 95%;
 		padding-bottom:11px;
@@ -449,24 +470,27 @@ h1.headline {
 	}
 	.span6{
 		h1 {
-			color: #0969A7;
+			color: $dark-blue;
 			text-align: center;
 			font-size: 62px;
-			margin: 51px 0px 0px 10px;
+			margin: 39px 0px 0px 10px;
 		}
 		h2 {
 			text-align: center;
-			color:#69adda;
+			color:$light-blue;
 			font-family: $helvetica;
+			margin: 54px 0 4px 0px;
 		}
 		h4 {
-		color: #0969A7;
-		border-bottom: 1px solid #38BEF1;
+		color: $dark-blue;
+		@include blue-border(1px);
 		font-size: 34px;
 		padding-bottom: 9px;
 		margin-right: 47px;
 		margin-bottom: 5px;
 		margin-top:38px;
+		display: block;
+		width:100%;
 		}
 		form {
 			margin-bottom: 5px;
@@ -487,6 +511,16 @@ h1.headline {
 					outline: none;
 				}
 			}
+		}
+		&:first-of-type h2 {
+			margin-top:0;
+			}
+		// For when the span6 bootstrap divs collapse vertically for
+		// the blog summary
+		@media only screen and (max-width:767px) {
+			h4, #mc_embed_signup {
+				text-align: center;
+			}	
 		}
 	}
 	@media only screen and (max-width:400px) {
@@ -509,6 +543,13 @@ h1.headline {
 		}
 	}	
 }
+// For media grid
+.mg_item_content {
+	h1 {
+		color:$dark-blue;
+		font-size:28px;
+	}
+}
 
 .body {
 	padding:0% 5% 0% 0%;
@@ -530,9 +571,10 @@ h1.headline {
 	h4.headline {
 		width: 95%;
 		color: $faded-gray;
+		font-family: $helvetica;
+		font-weight:300;
 		font-size: 38px;
 		border-bottom: 2px solid #38BEF1;
-		font-weight: normal;
 		margin: 16px 0px;
 			a {
 			color: $faded-gray;
@@ -542,11 +584,14 @@ h1.headline {
 				text-decoration: none;
 			}
 		}
+		@media only screen and (max-width:481px) {
+			font-size:28px;
+		}
 	}
 
 	p {
 		color: $faded-gray;
-		font-size: 14px;
+		font-size: 16px;
 		line-height: 1.4em;
 	}
 
@@ -558,10 +603,16 @@ h1.headline {
 
 	blockquote p {
 		font-family: $lucida-grande;
-		font-size:16px;
+		font-size:18px;
 		border-left: 7px solid #38BEF1;
 		padding: 0px 16px;
 		color:#b6b6b6;
+	}
+}
+// Styling for contact page
+#post-51 {
+	@media only screen and (max-width:767px) {
+		text-align: center;
 	}
 }
 
@@ -576,8 +627,6 @@ h1.headline {
 	.mc-field-group {
 	    display: block;
 	}
-
-
 
 	.mce-TEEFONO {
 		cursor: default;
@@ -595,7 +644,7 @@ h1.headline {
 		border: 1px solid #7AA7AD;
 		width: 366px;
 		margin: 12px;
-		color: #494949;
+		color: $faded-gray;
 		display: inline-block;
 		@include transition (all 0.3s);
 		@media only screen and (max-width:420px){
@@ -623,9 +672,15 @@ h1.headline {
 		padding: .5em 2.5em;
 		font-size: 30px;
 		font-family: 'Bebas';
-		background: #69ADDA;
+		background: $light-blue;
 		border: none;
 		color: #FFF;
 		border-radius: 14px;
+	}
+	inputy[type="radio"] {
+		position: relative;
+		bottom: 2px;
+		display: inline-block;
+		margin-right: 3px;
 	}
 }
