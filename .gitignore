@@ -1,2 +1,3 @@
 # Ignore all documents in the content gallery (since they are just jpegs)
 img/content-gallery/*
+css/.sass-cache

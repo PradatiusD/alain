@@ -1,4 +1,5 @@
-@import 'bourbon/bourbon';
+@import 'bourbon/bourbon',
+'bootstrap.min.scss';
 
 @font-face {
     font-family: 'Bebas';
@@ -21,6 +22,28 @@ $body-gray:#656E72;
 // Mixins
 @mixin blue-border ($height) {
 	border-bottom:$height solid #38bef1
+}
+
+@mixin commentsBox {
+	span.num_comments {
+		width: auto;
+		font-size: 15px;
+		border: 0;
+	}
+	a.num_comments_link {
+		font-family: $lucida-grande;
+		background: #69ADDA;
+		display: inline-block;
+		padding: 10px 10px 2px 10px;
+		border-radius: 0.5em;
+		color: #FFF;
+		font-weight: 200;
+		@include transition (all 0.5s);
+		&:hover {
+			background:$dark-blue;
+			text-decoration: none;
+		}
+	}
 }
 
 body {
@@ -127,6 +150,7 @@ header.header {
 	.leftNav{
 		ul.social {
 			position: fixed;
+			box-shadow:0 4px 15px rgba(0, 0, 0, 0.5);
 			top:0;
 			li:first-child{
 				padding-top: 71px;
@@ -206,7 +230,7 @@ header.header {
 			}
 		}
 		li {
-			padding:0 1%;
+			padding:0px 1% 15px 1%;
 			font-size:28px;
 		}
 		li.desktopmenu {
@@ -404,6 +428,7 @@ h1.headline {
 			display: inline-block;
 			width: 64%;
 			padding:10px;
+			margin-left: 34%;
 			strong {
 				font-weight: normal;
 				color: #808080;
@@ -446,6 +471,11 @@ h1.headline {
  }
 }
 
+// Homepage twitter widget
+#twitter-widget-0 {
+	width:100% !important;
+}
+
 .timeline {
     background:none !important;
     border:0 !important;
@@ -454,8 +484,20 @@ h1.headline {
     visibility:hidden !important;
 }
 
+.single.single-post .span12 {
+	@include commentsBox;
+	a.num_comments_link {
+		padding-bottom:8px;
+	}
+}
+
 #blog {
 	margin-top:30px;
+	.body {
+		left:0%;
+	}
+	@include commentsBox;
+
 	.row-fluid {
 		margin-bottom:30px;
 	}
@@ -474,23 +516,29 @@ h1.headline {
 			text-align: center;
 			font-size: 62px;
 			margin: 39px 0px 0px 10px;
+			@media screen and (max-width:786px) {
+				margin:0.5em auto 0em auto;
+			}
 		}
 		h2 {
 			text-align: center;
 			color:$light-blue;
 			font-family: $helvetica;
 			margin: 54px 0 4px 0px;
+			@media screen and (max-width:786px) {
+				
+			}
 		}
 		h4 {
-		color: $dark-blue;
-		@include blue-border(1px);
-		font-size: 34px;
-		padding-bottom: 9px;
-		margin-right: 47px;
-		margin-bottom: 5px;
-		margin-top:38px;
-		display: block;
-		width:100%;
+			color: $dark-blue;
+			@include blue-border(1px);
+			font-size: 34px;
+			padding-bottom: 9px;
+			margin-right: 47px;
+			margin-bottom: 5px;
+			margin-top:38px;
+			display: block;
+			width:100%;
 		}
 		form {
 			margin-bottom: 5px;
@@ -509,6 +557,9 @@ h1.headline {
 				}
 				&:focus {
 					outline: none;
+				}
+				@media screen and (min-width:786px) and (max-width:979px) {
+					padding:9px 12px;
 				}
 			}
 		}
@@ -553,6 +604,8 @@ h1.headline {
 
 .body {
 	padding:0% 5% 0% 0%;
+	position:relative;
+	left:3%;
 	h4 {
 		color: $faded-gray;
 		font-size: 38px;
@@ -609,12 +662,14 @@ h1.headline {
 		color:#b6b6b6;
 	}
 }
+
 // Styling for contact page
 #post-51 {
 	@media only screen and (max-width:767px) {
 		text-align: center;
 	}
 }
+
 
 .contact {
 	.phonearea, .phonedetail1, .phonedetail2 {

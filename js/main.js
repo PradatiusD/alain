@@ -21,7 +21,7 @@ jQuery(document).ready(function($){
 
 	function dropdownz () {
 		var windowWidth = window.innerWidth;
-		if (windowWidth > 480) {
+		if (windowWidth > 486) {
 			$('#menu').css({'display': 'none'});
 			$('ul.dropdownz').css({'height': 'auto'})
 		} else {
