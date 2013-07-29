@@ -108,7 +108,8 @@ header.header {
 		background:#216abb;
 		overflow: hidden;
 		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-		ul:first-of-type {
+		max-width: 1280px;
+		ul.desktopmenuUL {
 			margin-left: 14%;
 			li {
 				vertical-align: middle;
@@ -192,6 +193,13 @@ header.header {
 		font-size:31px;
 
 	}
+// Large displays
+	@media only screen and (min-width:1160px) {
+		.topNav ul.desktopmenuUL {
+			margin-left: 150px;
+		}
+	}
+
 // Breakpoint for header.header navigation at 1159px
 	@media only screen and (max-width:1159px) {
 		position: relative;
@@ -206,9 +214,9 @@ header.header {
 			ul {
 				margin:0;
 				height: auto;
-				&:first-of-type {
-					margin-left:0;	
-				}
+			}
+			ul.desktopmenuUL {
+				margin-left:0;
 			}
 			li{
 				margin-top:0.5em;
@@ -500,6 +508,8 @@ h1.headline {
 
 #blog {
 	margin-top:30px;
+	padding-bottom:2em;
+	margin-bottom:3em;
 	.body {
 		left:0%;
 	}
@@ -607,6 +617,10 @@ h1.headline {
 		color:$dark-blue;
 		font-size:28px;
 	}
+}
+
+.apeventwidget {
+	display:none;
 }
 
 .body {
@@ -748,4 +762,9 @@ h1.headline {
 		display: inline-block;
 		margin-right: 3px;
 	}
+}
+
+// Fix for IE 
+label.iedisplay {
+	display:none;
 }

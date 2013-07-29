@@ -1478,10 +1478,11 @@ header.header {
     font-size: 23px;
     background: #216abb;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); }
-    header.header .topNav ul:first-of-type {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    max-width: 1280px; }
+    header.header .topNav ul.desktopmenuUL {
       margin-left: 14%; }
-      header.header .topNav ul:first-of-type li {
+      header.header .topNav ul.desktopmenuUL li {
         vertical-align: middle; }
     header.header .topNav li {
       vertical-align: top; }
@@ -1536,6 +1537,9 @@ header.header {
     display: inline-block;
     padding: 0 14px;
     font-size: 31px; }
+  @media only screen and (min-width: 1160px) {
+    header.header .topNav ul.desktopmenuUL {
+      margin-left: 150px; } }
   @media only screen and (max-width: 1159px) {
     header.header {
       position: relative;
@@ -1546,8 +1550,8 @@ header.header {
       header.header .topNav ul {
         margin: 0;
         height: auto; }
-        header.header .topNav ul:first-of-type {
-          margin-left: 0; }
+      header.header .topNav ul.desktopmenuUL {
+        margin-left: 0; }
       header.header .topNav li {
         margin-top: 0.5em; }
       header.header .topNav .logo {
@@ -1786,7 +1790,9 @@ h1.headline {
   margin-top: 10px; }
 
 #blog {
-  margin-top: 30px; }
+  margin-top: 30px;
+  padding-bottom: 2em;
+  margin-bottom: 3em; }
   #blog .body {
     left: 0%; }
   #blog span.num_comments {
@@ -1886,6 +1892,9 @@ h1.headline {
 .mg_item_content h1 {
   color: #0969a7;
   font-size: 28px; }
+
+.apeventwidget {
+  display: none; }
 
 .body {
   padding: 0% 5% 0% 0%;
@@ -1997,3 +2006,6 @@ h1.headline {
   bottom: 2px;
   display: inline-block;
   margin-right: 3px; }
+
+label.iedisplay {
+  display: none; }
