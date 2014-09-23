@@ -1,0 +1,20 @@
+{
+  "name": "alain",
+  "version": "0.0.0",
+  "homepage": "https://github.com/PradatiusD/alain",
+  "authors": [
+    "PradatiusD <danielprada2012@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.0.2",
+    "wp-bootstrap-navwalker": "https://github.com/twittem/wp-bootstrap-navwalker.git#~2.0.4"
+  }
+}

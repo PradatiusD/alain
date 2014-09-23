@@ -1,0 +1,5 @@
+{
+	"php": [
+		"bower_components/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php"
+	]
+}
