@@ -5003,8 +5003,25 @@ td.visible-print {
   th.hidden-print,
   td.hidden-print {
     display: none !important; } }
-.navbar-default.navbar-fixed-top {
+.logged-in .navbar-default.navbar-fixed-top {
   padding-top: 32px; }
 
 body {
   padding-top: 70px; }
+
+.navbar-brand {
+  float: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto; }
+  .logged-in .navbar-brand {
+    margin-left: auto !important; }
+
+.navbar-center {
+  position: absolute;
+  width: 100px;
+  left: 50%;
+  text-align: center;
+  margin-left: -50px;
+  height: 100%; }

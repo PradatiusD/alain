@@ -11,32 +11,48 @@
     </head>
     <body <?php body_class(); ?>>
         <nav class="navbar navbar-default navbar navbar-default navbar-fixed-top" role="navigation">
-          <div class="container-fluid">
+          <div class="container">
 
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-                <a class="navbar-brand" href="<?php echo home_url(); ?>">
+            </div>
+            <div class="navbar-center">            
+                <a class="navbar-brand " href="<?php echo home_url(); ?>">
                     <?php bloginfo('name'); ?>
                 </a>
             </div>
-
+            <section class="collapse navbar-collapse" id="navigationbar">
                 <?php
                     wp_nav_menu( array(
-                        'menu'              => 'primary',
-                        'theme_location'    => 'primary',
+                        'menu'              => 'left-menu',
+                        'theme_location'    => 'Left Menu',
                         'depth'             => 2,
                         'container'         => 'div',
-                        'container_class'   => 'collapse navbar-collapse',
-                        'container_id'      => 'bs-example-navbar-collapse-1',
-                        'menu_class'        => 'nav navbar-nav',
+                        'container_class'   => '',
+                        'container_id'      => 'bs-right-menu',
+                        'menu_class'        => 'nav navbar-nav navbar-left',
                         'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
                         'walker'            => new wp_bootstrap_navwalker())
                     );
                 ?>
+                <?php
+                    wp_nav_menu( array(
+                        'menu'              => 'right-menu',
+                        'theme_location'    => 'Right Menu',
+                        'depth'             => 2,
+                        'container'         => 'div',
+                        'container_class'   => '',
+                        'container_id'      => 'bs-left-menu',
+                        'menu_class'        => 'nav navbar-nav navbar-right',
+                        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                        'walker'            => new wp_bootstrap_navwalker())
+                    );
+                ?>
+            </section>
             </div>
         </nav>

@@ -16,7 +16,25 @@
 @import "../bower_components/bootstrap-sass/lib/bootstrap"
 
 .navbar-default.navbar-fixed-top
-	padding-top: 32px
+    .logged-in &
+        padding-top: 32px
 
 body
-	padding-top: 70px
+    padding-top: 70px
+
+.navbar-brand
+    float: none
+    display: block
+    width: 100%
+    text-align: center
+    margin: 0 auto
+    .logged-in &
+        margin-left: auto !important
+
+.navbar-center
+    position: absolute
+    width: 100px
+    left: 50%
+    text-align: center
+    margin-left: -50px
+    height: 100%
