@@ -1,7 +1,7 @@
 <?php
 // For Debugging
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 // Register Custom Navigation Walker
 require_once('lib/wp_bootstrap_navwalker.php');
@@ -41,7 +41,28 @@ function fb_feed() {
 
 		global $facebook;
 		
-		$request = $facebook->api('/488298457891169/feed');
+		$request = array(
+			'feed'  => $facebook->api('/488298457891169/feed'),
+			'about' => $facebook->api('/488298457891169')
+		);
+
+		foreach ($request['feed']['data'] as $key => $value) {
+
+			
+			if (isset($request['feed']['data'][$key]['object_id'])) {
+
+				$object_id = $request['feed']['data'][$key]['object_id'];
+
+				// Add high res pic if there
+
+				$request['feed']['data'][$key]['moreData'] = $facebook->api('/'.$object_id);
+
+			}
+
+			// Add like count
+			$request['feed']['data'][$key]['likes'] = $facebook->api('/'.$request['feed']['data'][$key]['id'].'/likes?limit=10000');
+			$request['feed']['data'][$key]['comments'] = $facebook->api('/'.$request['feed']['data'][$key]['id'].'/comments?limit=10000');
+		}
 
 		// turn data into JSON
 		$data = json_encode($request);
@@ -53,3 +74,5 @@ function fb_feed() {
 	}
 	return $data;
 }
+
+// print_r(json_encode($facebook->api('488298457891169_713501038704242')));
