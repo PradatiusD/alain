@@ -2,7 +2,7 @@
 module.exports = function(grunt) {
 
 
-  var assets = grunt.file.readJSON('assets.json');
+  var assets = grunt.file.readJSON('bower.json');
 
   var sassFile = 'theme/style.sass';
 
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
         expand: true
       },
       dep: {
-        src: assets.php,
+        src: assets.lib.php,
         dest: 'theme/lib/',
         flatten: true,
         expand: true,

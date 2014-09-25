@@ -3,9 +3,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Register Custom Navigation Walker
-require_once('lib/wp_bootstrap_navwalker.php');
-
 // For live reloading
 if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {
   wp_register_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
@@ -20,59 +17,37 @@ function register_menus() {
 add_action( 'init', 'register_menus' );
 
 
+
+// Register Custom Navigation Walker
+require_once('lib/wp_bootstrap_navwalker.php');
+
+// Load Composer Dependencies
+require_once('lib/autoload.php');
+
 // Facebook Feed
-require 'lib/facebook.php';
-$facebook = new Facebook(array(
-  'appId'  => '324143354431454',
-  'secret' => '90a2b06a5a792d89638d439b2a774db3',
-));
+require_once('fb_feed.php');
 
-function fb_feed() {
+// Twitter Feed
 
-	$jsonFilePath = 'fb.json';
+function twitter_feed () {
 
-	if (file_exists($jsonFilePath)) {
+    $config = array(
+        'consumer_key' => 'YKfniTT4KcO24NA1qb9T79gxi',
+        'consumer_secret' => '6ZhcMRdMyaoUWIxoPfpekdeiavPMGP9qyw6d74B8CzQMpgFxIX',
+        'oauth_token' => '838713331-TzSuQUllxJbCPmr9aXdprxoXrG6z5jBxg05kVoCj',
+        'oauth_token_secret' => 'ODMW4y6K31Y0Yr50Oo1wtAMOBngAvu4lgQX41fO1Cm1H3',
+        'output_format' => 'object'
+    );
 
-		$jsonFile = fopen($jsonFilePath, 'r');
-		$data = fread($jsonFile, filesize($jsonFilePath));
-		fclose($jsonFile);
+    $tw = new TwitterOAuth\TwitterOAuth($config);
 
-	} else {
+    $params = array(
+        'screen_name' => 'alainpupo',
+        'count' => 10,
+        'exclude_replies' => true
+    );
 
-		global $facebook;
-		
-		$request = array(
-			'feed'  => $facebook->api('/488298457891169/feed'),
-			'about' => $facebook->api('/488298457891169')
-		);
+    $response = $tw->get('statuses/user_timeline', $params);
 
-		foreach ($request['feed']['data'] as $key => $value) {
-
-			
-			if (isset($request['feed']['data'][$key]['object_id'])) {
-
-				$object_id = $request['feed']['data'][$key]['object_id'];
-
-				// Add high res pic if there
-
-				$request['feed']['data'][$key]['moreData'] = $facebook->api('/'.$object_id);
-
-			}
-
-			// Add like count
-			$request['feed']['data'][$key]['likes'] = $facebook->api('/'.$request['feed']['data'][$key]['id'].'/likes?limit=10000');
-			$request['feed']['data'][$key]['comments'] = $facebook->api('/'.$request['feed']['data'][$key]['id'].'/comments?limit=10000');
-		}
-
-		// turn data into JSON
-		$data = json_encode($request);
-
-		// Write to file
-		$jsonFile = fopen($jsonFilePath, "w");
-		fwrite($jsonFile, $data);
-		fclose($jsonFile);
-	}
-	return $data;
+    return json_encode($response);
 }
-
-// print_r(json_encode($facebook->api('488298457891169_713501038704242')));

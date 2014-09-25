@@ -1,0 +1,16 @@
+{
+    "name": "PradaDesigners/alain",
+    "require": {
+        "ricardoper/twitteroauth": "~1.1",
+        "facebook/php-sdk": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "PradatiusD",
+            "email": "danielprada2012@gmail.com"
+        }
+    ],
+    "config": {
+        "vendor-dir": "theme/lib"
+    }
+}

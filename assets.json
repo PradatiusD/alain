@@ -1,7 +1,0 @@
-{
-	"php": [
-		"bower_components/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php",
-		"bower_components/facebook-php-sdk/src/base_facebook.php",
-		"bower_components/facebook-php-sdk/src/facebook.php"
-	]
-}
