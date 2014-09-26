@@ -51,3 +51,13 @@ function twitter_feed () {
 
     return json_encode($response);
 }
+
+// YouTube Feed
+
+function youtube_feed () {
+    $youtube = new Madcoda\Youtube(array('key' => 'AIzaSyDaAv-me2KuP7xitVK6iWG1JK17K1YDk5Q'));
+
+    $videoList = $youtube->searchVideos('Alain Pupo');
+    
+    return json_encode($videoList);
+}

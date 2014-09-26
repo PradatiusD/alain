@@ -2,7 +2,8 @@
     "name": "PradaDesigners/alain",
     "require": {
         "ricardoper/twitteroauth": "~1.1",
-        "facebook/php-sdk": "dev-master"
+        "facebook/php-sdk": "dev-master",
+        "madcoda/php-youtube-api" : "dev-master"
     },
     "authors": [
         {

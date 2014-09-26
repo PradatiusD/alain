@@ -3,14 +3,41 @@
   
   <section class="row">
 
-    <aside ng-controller="FacebookController" class="col-md-4 col-md-offset-4" ng-show="feed">
+    <aside ng-controller="YoutubeController" class="col-md-4">
 
-        <h2>En Facebook</h2>
+      <header>
+        <h2>En YouTube</h2>
         <h5 class="lead">
-          <strong>
-            {{about.likes}}
-          </strong> likes y <strong>{{about.talking_about_count}}</strong> hablando de <a href="{{post.link}}">Alain</a>
+          Sea Testigo a Alain! 
         </h5>
+      </header>
+      <hr>
+
+      <div ng-repeat="video in feed">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="lead">{{video.snippet.title}}
+              <br>
+            </p>
+            <small class"text-muted">{{video.snippet.publishedAt | date:'MMM d, y h:mm a'}}</small>
+            <img ng-src="{{video.snippet.thumbnails.high.url}}" class="img-responsive">
+          </div>          
+        </div>
+        <hr>
+      </div>
+      
+    </aside>
+
+    <aside ng-controller="FacebookController" class="col-md-4" ng-show="feed">
+
+        <header>
+          <h2>En Facebook</h2>
+          <h5 class="lead">
+            <strong>
+              {{about.likes}}
+            </strong> likes y <strong>{{about.talking_about_count}}</strong> hablando de <a href="{{post.link}}">Alain</a>
+          </h5>
+        </header>
         <hr>
 
         <div ng-repeat="post in feed" ng-show="post.message">
@@ -52,12 +79,14 @@
 
     <aside ng-controller="TwitterController" class="col-md-4" ng-show="feed">
 
-      <h2>En Twitter</h2>
-      <h5 class="lead">
-        <strong>
-          {{about.followers_count}}
-        </strong> seguidores escuchando a <a href="http://twitter.com/{{about.screen_name}}" target="_blank">Alain</a>
-      </h5>
+      <header>
+        <h2>En Twitter</h2>
+        <h5 class="lead">
+          <strong>
+            {{about.followers_count}}
+          </strong> seguidores escuchando a <a href="http://twitter.com/{{about.screen_name}}" target="_blank">Alain</a>
+        </h5>
+      </header>
       <hr>
 
       <div ng-repeat="post in feed">
@@ -98,6 +127,9 @@
 <script>
   var twData = <?php echo twitter_feed();?>;
 </script>
+<script>
+  var ytData = <?php echo youtube_feed();?>;
+</script>
 
 <script>
 var App = angular.module('alain',['ngSanitize']);
@@ -107,7 +139,7 @@ App.controller('FacebookController', function($scope) {
   $scope.feed = fbData.feed.data;
   $scope.about = fbData.about;
 
-  console.log(fbData);
+  console.log({'facebook':fbData});
 
 });
 
@@ -122,8 +154,15 @@ App.controller('TwitterController', ['$scope','$filter', function($scope, $filte
     return date;
   };
 
-  console.log($scope.feed);
+  console.log({'twitter': twData});
 }]);
+
+App.controller('YoutubeController', function($scope) {
+
+  $scope.feed = ytData;
+  console.log({'youtube':ytData});
+
+});
 </script>
 
 <?php get_footer();?>

@@ -7,4 +7,5 @@ $baseDir = dirname(dirname($vendorDir));
 
 return array(
     'TwitterOAuth\\' => array($vendorDir . '/ricardoper/twitteroauth'),
+    'Madcoda' => array($vendorDir . '/madcoda/php-youtube-api/lib'),
 );
