@@ -15,13 +15,24 @@
   ],
   "dependencies": {
     "bootstrap-sass": "~3.0.2",
-    "wp-bootstrap-navwalker": "https://github.com/twittem/wp-bootstrap-navwalker.git#~2.0.4",
-    "facebook-php-sdk": "https://github.com/facebook/facebook-php-sdk.git#~3.2.3",
-    "TwitterOAuth": "https://github.com/ricardoper/TwitterOAuth.git#~1.1.1"
+    "fancybox-scss": "~2.2.0",
+    "angular-tweet-filter": "*",
+    "sass-mediaqueries": "~1.3.1"
   },
   "lib": {
     "php": [
       "bower_components/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php"
+    ],
+    "js": [
+      "bower_components/fancybox-scss/source/jquery.fancybox.pack.js",
+      "bower_components/angular-tweet-filter/index.js"
+    ],
+    "img": [
+      "bower_components/fancybox-scss/source/fancybox_loading.gif",
+      "bower_components/fancybox-scss/source/fancybox_loading@2x.gif",
+      "bower_components/fancybox-scss/source/fancybox_overlay.png",
+      "bower_components/fancybox-scss/source/fancybox_sprite.png",
+      "bower_components/fancybox-scss/source/fancybox_sprite@2x.png"
     ]
   }
 }

@@ -1,10 +1,7 @@
 <?php
 // Facebook Feed
-
-$facebook = new Facebook(array(
-  'appId'  => '324143354431454',
-  'secret' => '90a2b06a5a792d89638d439b2a774db3',
-));
+global $alainConfig;
+$facebook = new Facebook($alainConfig['facebook']);
 
 function fb_feed() {
 

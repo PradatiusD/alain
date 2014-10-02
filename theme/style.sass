@@ -15,6 +15,10 @@
 
 @import "../bower_components/bootstrap-sass/lib/bootstrap"
 
+$fancybox-img-path : 'lib/'
+@import "../bower_components/fancybox-scss/source/jquery.fancybox"
+@import "../bower_components/sass-mediaqueries/media-queries"
+
 .navbar-default.navbar-fixed-top
     .logged-in &
         padding-top: 32px
@@ -38,3 +42,30 @@ body
     text-align: center
     margin-left: -50px
     height: 100%
+
+
+.feeds
+    margin: 0 0.25em
+    max-width: 1400px
+    +min-screen(1401px)
+        margin: 0 auto
+        
+    .imgHolder
+        display: block
+        position: relative
+        img
+            width: 100%
+        i.fa-play
+            position: absolute
+            top: 50%
+            left: 50%
+            background: rgba(255, 255, 255, 0.82)
+            border-radius: 100%
+            color: rgba(128, 128, 128, 0.85)
+            height: 60px
+            width: 60px
+            padding-left: 16px
+            padding-top: 10px
+            margin-left: -30px
+            margin-top: -30px
+            font-size: 40px

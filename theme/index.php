@@ -1,34 +1,36 @@
 <?php get_header();?>
 <div class="container-fluid" ng-app='alain'>
   
-  <section class="row">
+  <section class="row feeds">
 
-    <aside ng-controller="YoutubeController" class="col-md-4">
+    <aside ng-controller="YoutubeController" class="col-sm-4" ng-show="feed">
 
       <header>
         <h2>En YouTube</h2>
         <h5 class="lead">
-          Sea Testigo a Alain! 
+          Sea Testigo de Alain! 
         </h5>
       </header>
       <hr>
 
-      <div ng-repeat="video in feed">
+      <article ng-repeat="video in feed">
         <div class="row">
           <div class="col-md-12">
-            <p class="lead">{{video.snippet.title}}
-              <br>
+            <p class="lead">
+              {{video.snippet.title}}
+              <small class="text-muted">
+                {{video.snippet.publishedAt | date:'MMM d, y h:mm a'}}
+              </small>
             </p>
-            <small class"text-muted">{{video.snippet.publishedAt | date:'MMM d, y h:mm a'}}</small>
-            <img ng-src="{{video.snippet.thumbnails.high.url}}" class="img-responsive">
+            <div fancybox></div>
           </div>          
         </div>
         <hr>
-      </div>
+      </article>
       
     </aside>
 
-    <aside ng-controller="FacebookController" class="col-md-4" ng-show="feed">
+    <aside ng-controller="FacebookController" class="col-sm-4" ng-show="feed">
 
         <header>
           <h2>En Facebook</h2>
@@ -40,7 +42,7 @@
         </header>
         <hr>
 
-        <div ng-repeat="post in feed" ng-show="post.message">
+        <article ng-repeat="post in feed" ng-show="post.message">
   
           <h3>
             <a href="{{about.link}}">
@@ -73,11 +75,11 @@
           </ul>
           <hr>
   
-        </div>
+        </article>
   
     </aside>
 
-    <aside ng-controller="TwitterController" class="col-md-4" ng-show="feed">
+    <aside ng-controller="TwitterController" class="col-sm-4" ng-show="feed">
 
       <header>
         <h2>En Twitter</h2>
@@ -89,22 +91,22 @@
       </header>
       <hr>
 
-      <div ng-repeat="post in feed">
+      <article ng-repeat="post in feed">
 
         <div class="row">
           <div class="col-xs-2 text-center">
             <img ng-src="{{post.user.profile_image_url}}" style="display:inline;" class="img-rounded img-responsive">
           </div>
             
-          <div class="col-xs-9">
+          <div class="col-xs-10">
             <h3 style="margin-top: 0;">
               <a href="http://twitter.com/{{user.screen_name}}" target="_blank">
                 {{post.user.name}}
               </a>
-              <small class="text-muted">@{{post.user.screen_name}}</small>              
+              <small class="text-muted">@{{post.user.screen_name}}</small>
             </h3>
             <p class="lead" style="margin-bottom:0;">
-              <span ng-bind-html='post.text | linky'></span>
+              <span ng-bind-html="post.text | tweet"></span>
               <br>
             </p>
             <h3 class="text-muted" style="margin-top:0;"><small>{{formatDate(post.created_at)}}</small></h3>
@@ -112,7 +114,7 @@
         </div>
         <hr>
 
-      </div>
+      </article>
 
     </aside>
   
@@ -121,6 +123,7 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-sanitize.min.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri() . '/lib/homepage-dependencies.min.js';?>"></script>
 <script>
   var fbData = <?php echo fb_feed();?>;
 </script>
@@ -130,39 +133,6 @@
 <script>
   var ytData = <?php echo youtube_feed();?>;
 </script>
-
-<script>
-var App = angular.module('alain',['ngSanitize']);
-
-App.controller('FacebookController', function($scope) {
-
-  $scope.feed = fbData.feed.data;
-  $scope.about = fbData.about;
-
-  console.log({'facebook':fbData});
-
-});
-
-App.controller('TwitterController', ['$scope','$filter', function($scope, $filter) {
-
-  $scope.feed = twData;
-  $scope.about = twData[0].user;
-
-  $scope.formatDate = function (dateString){
-    var date = Date.parse(dateString);
-    date = $filter('date')(date, 'MMM d h:mm a');
-    return date;
-  };
-
-  console.log({'twitter': twData});
-}]);
-
-App.controller('YoutubeController', function($scope) {
-
-  $scope.feed = ytData;
-  console.log({'youtube':ytData});
-
-});
-</script>
+<script src="<?php  echo get_stylesheet_directory_uri() . '/home_feeds.js';?>"></script>
 
 <?php get_footer();?>
