@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <link rel="icon" href="<?php echo get_stylesheet_directory_uri();?>/favicon.ico" type="image/x-icon" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700,800,600' rel='stylesheet' type='text/css'>
         <?php wp_enqueue_script("jquery"); ?>
         <?php wp_head(); ?>
     </head>

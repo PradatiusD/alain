@@ -266,7 +266,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
   color: #333333;
@@ -391,7 +391,7 @@ cite {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit; }
@@ -5241,47 +5241,75 @@ td.visible-print {
 body {
   padding-top: 70px; }
 
+.navbar-default {
+  border-bottom: 26px solid #445496; }
+
 .navbar-brand {
   float: none;
   display: block;
   width: 100%;
   text-align: center;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background: url("img/Alain-logo.png");
+  background-size: auto 100%;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  position: relative;
+  top: 22px;
+  height: 54px; }
   .logged-in .navbar-brand {
     margin-left: auto !important; }
 
 .navbar-center {
   position: absolute;
-  width: 100px;
+  width: 150px;
   left: 50%;
   text-align: center;
-  margin-left: -50px;
+  margin-left: -75px;
   height: 100%; }
 
-.feeds {
+.home .container-fluid > .row {
   margin: 0 0.25em;
   max-width: 1400px; }
   @media screen and (min-width: 1401px) {
-    .feeds {
+    .home .container-fluid > .row {
       margin: 0 auto; } }
-  .feeds .imgHolder {
-    display: block;
-    position: relative; }
-    .feeds .imgHolder img {
-      width: 100%; }
-    .feeds .imgHolder i.fa-play {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      background: rgba(255, 255, 255, 0.82);
-      border-radius: 100%;
-      color: rgba(128, 128, 128, 0.85);
-      height: 60px;
-      width: 60px;
-      padding-left: 16px;
-      padding-top: 10px;
-      margin-left: -30px;
-      margin-top: -30px;
-      font-size: 40px; }
+
+.feeds .imgHolder {
+  display: block;
+  position: relative; }
+  .feeds .imgHolder img {
+    width: 100%; }
+  .feeds .imgHolder i.fa-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.82);
+    border-radius: 100%;
+    color: rgba(128, 128, 128, 0.85);
+    height: 60px;
+    width: 60px;
+    padding-left: 16px;
+    padding-top: 10px;
+    margin-left: -30px;
+    margin-top: -30px;
+    font-size: 40px;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in; }
+    .feeds .imgHolder i.fa-play:hover {
+      margin-top: -35px; }
+.feeds .feed-body .lead {
+  font-weight: 400;
+  font-size: 17px; }
+
+.feed-header .fa {
+  background: #445496;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  padding-top: 10px;
+  color: white; }
 
 /*# sourceMappingURL=style.css.map */

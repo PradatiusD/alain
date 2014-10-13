@@ -13,11 +13,19 @@
  * Use it to make something cool, have fun, and share what you've learned with others.
  */
 
+// Global vars
+$alainBlue: #445496
+
+// Bootstrap variables
+$navbar-height: 50px
+$font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+
 @import "../bower_components/bootstrap-sass/lib/bootstrap"
 
 $fancybox-img-path : 'lib/'
 @import "../bower_components/fancybox-scss/source/jquery.fancybox"
 @import "../bower_components/sass-mediaqueries/media-queries"
+@import "../bower_components/bourbon/dist/bourbon"
 
 .navbar-default.navbar-fixed-top
     .logged-in &
@@ -26,29 +34,45 @@ $fancybox-img-path : 'lib/'
 body
     padding-top: 70px
 
+
+.navbar-default
+    border-bottom: 26px solid $alainBlue
+
 .navbar-brand
     float: none
     display: block
     width: 100%
     text-align: center
     margin: 0 auto
+    background: url('img/Alain-logo.png')
+    background-size: auto 100%
+    text-indent: -9999px
+    background-repeat: no-repeat
+    background-position: bottom center
+    position: relative
+    top: 22px
+    height: 54px
+
     .logged-in &
         margin-left: auto !important
 
 .navbar-center
+    $centerW: 150px
     position: absolute
-    width: 100px
+    width: $centerW
     left: 50%
     text-align: center
-    margin-left: -50px
+    margin-left: -$centerW/2
     height: 100%
 
 
-.feeds
+.home .container-fluid > .row
     margin: 0 0.25em
     max-width: 1400px
     +min-screen(1401px)
-        margin: 0 auto
+        margin: 0 auto    
+
+.feeds
         
     .imgHolder
         display: block
@@ -69,3 +93,19 @@ body
             margin-left: -30px
             margin-top: -30px
             font-size: 40px
+            +transition(all 0.3s ease-in)
+            &:hover
+                margin-top: -35px
+
+    .feed-body 
+        .lead
+            font-weight: 400
+            font-size: 17px
+
+.feed-header .fa
+    background: $alainBlue
+    height: 50px
+    width: 50px
+    border-radius: 100%
+    padding-top: 10px
+    color: white

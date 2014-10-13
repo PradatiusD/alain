@@ -42,8 +42,7 @@ App.directive('fancybox', function() {
                 '<i class="fa fa-play fa-3x"></i>'+
               '</a>',
     link: function (scope, element) {
-      var $ = jQuery;
-      $(element).find('a').fancybox();
+      jQuery(element).find('a.imgHolder').fancybox();
     }
   };
 });
