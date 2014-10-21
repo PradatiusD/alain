@@ -13,8 +13,8 @@ if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {
 
 // Register Menus
 function register_menus() {
-  register_nav_menu('left-menu',__( 'Left Menu' ));
-  register_nav_menu('right-menu',__( 'Right Menu' ));
+  register_nav_menu('left-menu', 'Left Menu');
+  register_nav_menu('right-menu', 'Right Menu');
 }
 add_action( 'init', 'register_menus' );
 
@@ -65,3 +65,20 @@ function youtube_feed () {
     
     return json_encode($videoList);
 }
+
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function add_widgets() {
+
+  register_sidebar( array(
+    'name' => 'Right Sidebar',
+    'id' => 'right_sidebar',
+    'before_widget' => '<div>',
+    'after_widget' =>  '</div>',
+    'before_title' =>  '<h2>',
+    'after_title' =>   '</h2>',
+  ) );
+}
+add_action( 'widgets_init', 'add_widgets' );

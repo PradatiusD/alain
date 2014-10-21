@@ -5268,6 +5268,9 @@ body {
   text-align: center;
   margin-left: -75px;
   height: 100%; }
+  @media screen and (max-width: 767px) {
+    .navbar-center {
+      bottom: -32px; } }
 
 .home .container-fluid > .row {
   margin: 0 0.25em;
@@ -5311,5 +5314,14 @@ body {
   border-radius: 100%;
   padding-top: 10px;
   color: white; }
+
+.sidebar {
+  margin-top: 1em; }
+
+.mejs-container .mejs-controls {
+  background: #454545 !important; }
+
+.interview-body {
+  font-size: 1.3em; }
 
 /*# sourceMappingURL=style.css.map */

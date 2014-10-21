@@ -8,13 +8,13 @@
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
             <h1>
-              <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+              <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>">
                 <?php the_title(); ?>
               </a>
             </h1>
 
             <?php
-            // If blog home
+              // If blog home
               if (is_home() || is_category()): ?>
                 <div class="row">
 
@@ -40,7 +40,12 @@
                 </div>
               <?php
               else:
-                the_content('Read more...');
+
+                if (get_post_type() == 'interview' && is_single()) {
+                  include('interviews.php');
+                } else {
+                  the_content('Read more...');
+                }
               endif;
             ?>
 

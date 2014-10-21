@@ -64,6 +64,8 @@ body
     text-align: center
     margin-left: -$centerW/2
     height: 100%
+    +max-screen(767px)
+        bottom: -32px
 
 
 .home .container-fluid > .row
@@ -109,3 +111,12 @@ body
     border-radius: 100%
     padding-top: 10px
     color: white
+
+.sidebar
+    margin-top: 1em
+
+.mejs-container .mejs-controls
+    background: #454545 !important
+
+.interview-body
+    font-size: 1.3em
