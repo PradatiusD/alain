@@ -1,10 +1,20 @@
 <?php get_header();?>
 <div class="container-fluid" ng-app='alain'>
   
+  <!-- Slider -->
+  <section class="homepage-slider">
+    <?php
+    if (function_exists('soliloquy')){
+      soliloquy('homepage-slider','slug');
+    }
+    ?>
+    
+  </section>
+  <!-- End Slider -->
 
   <!-- Begin showings -->
   <section class="row">
-    <h2 class="text-center">Escucha a Alain</h2>
+    <h2 class="text-center header">Escucha a Alain</h2>
     <hr>
     <?php
       $showings_query = new WP_Query(array('post_type' => 'showing'));
@@ -31,7 +41,7 @@
 
   <section class="row feeds">
 
-    <h2 class="text-center">Conectate con Alain</h2>
+    <h2 class="text-center header">Conectate con Alain</h2>
     <hr>
 
     <aside ng-controller="YoutubeController" class="col-sm-4" ng-show="feed">
