@@ -35,6 +35,22 @@
         endwhile;
       endif;
     ?>
+    <aside class="col-md-6">
+      <article class="book-sale row">
+        <div class="col-sm-3">
+          <img src="<?php echo get_stylesheet_directory_uri();?>/img/book.jpg" style="max-width:127px;">        
+        </div>
+        <div class="col-sm-9">
+          <div class="book-description">
+            <h3>El libro que explica su historia</h3>
+            <p>Este cuento describe una conmovedora historia autobiográfica sobre las experiencias paranormales de Alain desde su nacimiento hasta su programa reciente de television "Alain Una Mano Amiga" y por sus impresionantes aciertos en programas de radio y televisión.</p>
+            <a href="http://www.amazon.com/Alain-El-Clarividente-Spanish-Edition/dp/1502557983/ref=sr_1_1?ie=UTF8&qid=1414461322&sr=8-1&keywords=alain+pupo" target="_blank" class="btn btn-default btn-lg">
+              Explora el libro
+            </a>
+          </div>          
+        </div>
+      </article>
+    </aside>
   </section>
 
   <!-- End showings -->

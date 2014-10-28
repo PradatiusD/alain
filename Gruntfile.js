@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         livereload: true
       },
       copy: {
-        files: ['theme/*','!'+sassFile, 'theme/img/*'],
+        files: ['theme/*','!'+sassFile, 'theme/img/*', '!*.map'],
         tasks: ['copy']
       },
       sass: {

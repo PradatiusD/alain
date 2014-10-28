@@ -391,8 +391,8 @@ cite {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
   line-height: 1.1;
   color: inherit; }
   h1 small,
@@ -3324,8 +3324,8 @@ input[type="button"].btn-block {
       margin-right: 15px; } }
 
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7; }
+  background-color: #1a67bd;
+  border-color: #1657a0; }
   .navbar-default .navbar-brand {
     color: #777; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -3340,7 +3340,7 @@ input[type="button"].btn-block {
       background-color: transparent; }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #555;
-    background-color: #e7e7e7; }
+    background-color: #1657a0; }
   .navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus {
     color: #ccc;
     background-color: transparent; }
@@ -3352,13 +3352,13 @@ input[type="button"].btn-block {
       background-color: #ccc; }
   .navbar-default .navbar-collapse,
   .navbar-default .navbar-form {
-    border-color: #e7e7e7; }
+    border-color: #1657a0; }
   .navbar-default .navbar-nav > .dropdown > a:hover .caret,
   .navbar-default .navbar-nav > .dropdown > a:focus .caret {
     border-top-color: #333;
     border-bottom-color: #333; }
   .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    background-color: #e7e7e7;
+    background-color: #1657a0;
     color: #555; }
     .navbar-default .navbar-nav > .open > a .caret, .navbar-default .navbar-nav > .open > a:hover .caret, .navbar-default .navbar-nav > .open > a:focus .caret {
       border-top-color: #555;
@@ -3374,7 +3374,7 @@ input[type="button"].btn-block {
         background-color: transparent; }
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
       color: #555;
-      background-color: #e7e7e7; }
+      background-color: #1657a0; }
     .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
       color: #ccc;
       background-color: transparent; } }
@@ -5236,9 +5236,16 @@ td.visible-print {
     background-size: 24px 24px;
     /*The size of the normal image, half the size of the hi-res image*/ } }
 h2.header {
-  font-family: "Open Sans Condensed";
-  font-weight: 700;
   font-size: 2.5em; }
+
+h2 {
+  color: #144f90; }
+
+h3 {
+  color: #559ae8; }
+
+h4 {
+  color: #11427a; }
 
 .nav-band {
   background: #1a67bd;
@@ -5298,11 +5305,15 @@ h2.header {
     margin-left: -30px;
     margin-top: -30px;
     font-size: 40px;
-    -webkit-transition: all 0.3s ease-in;
-    -moz-transition: all 0.3s ease-in;
-    transition: all 0.3s ease-in; }
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; }
     .feeds .imgHolder i.fa-play:hover {
-      margin-top: -35px; }
+      -webkit-transform: translateY(-5px);
+      -moz-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+      -o-transform: translateY(-5px);
+      transform: translateY(-5px); }
 .feeds .feed-body .lead {
   font-weight: 400;
   font-size: 17px; }
@@ -5323,5 +5334,30 @@ h2.header {
 
 .interview-body {
   font-size: 1.3em; }
+
+.book-description {
+  background: #f8f4fd;
+  padding: 1em;
+  border-radius: 1em;
+  border: 1px solid #ece2fb; }
+  .book-description h3 {
+    color: #a26eea; }
+  .book-description .btn {
+    font-family: "Open Sans Condensed";
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: #b389ee;
+    color: white;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; }
+    .book-description .btn:hover {
+      -webkit-transform: translateY(-5px);
+      -moz-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+      -o-transform: translateY(-5px);
+      transform: translateY(-5px); }
+    .book-description .btn:hover {
+      background: #965ce8; }
 
 /*# sourceMappingURL=style.css.map */
