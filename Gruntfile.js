@@ -9,12 +9,12 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     watch: {
-      options: {
-        livereload: true
-      },
       copy: {
         files: ['theme/*','!'+sassFile, 'theme/img/*', '!*.map'],
-        tasks: ['copy']
+        tasks: ['copy'],
+        options: {
+          livereload: true
+        }
       },
       sass: {
         files: [sassFile],
