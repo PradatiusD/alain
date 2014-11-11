@@ -5451,4 +5451,10 @@ h4 {
     .book-description .btn:hover, .book-description #searchsubmit:hover {
       background: #965ce8; }
 
+.sidebar iframe {
+  width: 100% !important;
+  height: 500px; }
+.sidebar ._4s7c {
+  border: none; }
+
 /*# sourceMappingURL=style.css.map */
