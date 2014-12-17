@@ -110,3 +110,18 @@ function homepage_footer_scripts() {
   }
 }
 add_action( 'wp_enqueue_scripts', 'homepage_footer_scripts');
+
+
+
+// Google webmaster tools
+function google_webmaster_tag(){
+    ob_start();
+    ?>
+    <?php if (get_current_blog_id() == 1): ?>
+      <meta name="google-site-verification" content="Z-3wkBBZYw1xSoUV2k0RvVf-aKV8fgPGy2uwKFzqiFk" />
+    <?php endif ?>
+    <?php
+    $output = ob_get_clean();
+    echo $output;
+}
+add_action('wp_head','google_webmaster_tag');
